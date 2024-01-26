@@ -1,0 +1,20 @@
+from datetime import datetime 
+
+alarm_time = input("Please enter the time in which you would like your alarm set for:HH:MM:SS\n")
+alarm_hr = alarm_time[0:2]
+alarm_min = alarm_time[3:5]
+alarm_sec = alarm_time[6:8]
+alarm_period = alarm_time[9:11].upper()
+print("Alarm is being set. Please wait...")
+while True:
+    now = datetime.now()
+    current_hour = now.strftime("%I")
+    current_minute = now.strftime("%M")
+    current_second = now.strftime("%S")
+    current_period = now.strftime("%p")
+    if(alarm_period==current_period):
+        if(alarm_hr==current_hour):
+            if(alarm_min==current_minute):
+                if(alarm_sec==current_second):
+                    print("It is time to wake up!")
+                    break
